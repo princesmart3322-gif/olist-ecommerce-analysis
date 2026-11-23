@@ -53,12 +53,32 @@ Orders by status: delivered 96,478, shipped 1,107, canceled 625, unavailable 609
 **4. Order items without a matching order** (`check4.png`)
 None found (0 orphan items).
 
-## Business Questions (planned)
-1. How do revenue and number of orders change month by month?
+## Business Questions
+
+### Q1: How do revenue and orders change month by month?
+See `04_q1_monthly_revenue.sql`.
+
+**Method:** Delivered orders only. Revenue is the sum of item prices in Brazilian reais, excluding freight. Each order is counted once with `COUNT(DISTINCT order_id)`.
+
+**Finding:** The data has only three months in 2016 (Sep, Oct and Dec, with 1, 265 and 1 orders, and none in Nov), so those months and the percentage changes around them (over 1,000,000% in Jan 2017) are not meaningful. From Jan 2017, orders grew from 750 to 7,069 in Jan 2018, and revenue from about 112K to about 925K. The peak month was Nov 2017 with 7,289 orders and 987,765 in revenue (+52.4% on Oct 2017), followed by a 26.5% drop in Dec 2017. The data alone cannot explain the November spike. From Jan to Aug 2018, monthly revenue stayed between about 826K and 978K, so growth leveled off. Revenue per order stayed between about 124 and 149 from Jan 2017 on, so growth came from more orders rather than larger orders. Delivered orders in the data end in Aug 2018.
+
+![Q1 result, first rows](q1_result_1.png)
+![Q1 result, remaining rows](q1_result_2.png)
+
+### Still to do (planned)
 2. Which product categories earn the most revenue?
 3. How long does delivery take, and what share of orders arrive late?
 4. Do late deliveries get lower review scores?
 5. Which payment methods do customers use?
 6. How many customers order more than once (using `customer_unique_id`)?
+
+*Results and a dashboard will be added as each question is completed.*
+
+## Business Questions (planned)
+1. Which product categories earn the most revenue?
+2. How long does delivery take, and what share of orders arrive late?
+3. Do late deliveries get lower review scores?
+4. Which payment methods do customers use?
+5. How many customers order more than once (using `customer_unique_id`)?
 
 *Results and a dashboard will be added as each question is completed.*
