@@ -105,7 +105,16 @@ See `08_q5_payments.sql`.
 ![Q5 payment methods](q5a_result.png)
 ![Q5 credit card installments](q5b_result.png)
 
-### Still to do (planned)
-6. How many customers order more than once (using `customer_unique_id`)?
+### Q6: How many customers order more than once?
+See `09_q6_repeat_customers.sql`.
 
-*Results and a dashboard will be added as each question is completed.*
+**Method:** Delivered orders only. Customers are identified by `customer_unique_id`, because every order gets its own `customer_id` in this dataset. The data covers Sep 2016 to Aug 2018, so a repeat purchase outside that period is not seen.
+
+**Finding:** 93,358 customers placed delivered orders. Of these, 90,557 (97.0%) ordered once, 2,573 (2.8%) ordered twice, 181 (0.2%) ordered three times and 47 (0.1%) ordered four or more times. In total 2,801 customers (3.0%) are repeat customers, and they account for 6.1% of the 96,478 delivered orders. The data alone cannot show why so few customers came back.
+
+![Q6 customers by number of orders](q6a_result.png)
+![Q6 repeat customer summary](q6b_result.png)
+
+## Next Steps (planned)
+- Add recommendations based on the findings above
+- Build a dashboard of the key results
