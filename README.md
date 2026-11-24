@@ -85,8 +85,17 @@ See `06_q3_delivery.sql`.
 ![Q3 by month, first rows](q3b_result_1.png)
 ![Q3 by month, remaining rows](q3b_result_2.png)
 
+### Q4: Do late deliveries get lower review scores?
+See `07_q4_reviews.sql`.
+
+**Method:** Delivered orders that have a delivery date and a review (95,824 orders; 646 delivered orders with no review are excluded). The `order_reviews_clean` view is used so each order has exactly one review (the latest). An order is late if it arrived after the estimated delivery date.
+
+**Finding:** On-time or early orders (88,163) averaged 4.29 stars, with 9.2% giving 1 or 2 stars and 62.4% giving 5 stars. Late orders (7,661) averaged 2.57 stars, with 54.1% giving 1 or 2 stars and 22.2% giving 5 stars. The score falls as the delay grows: 3.77 for orders up to 3 days late (2,636 orders), 2.32 for 3 to 7 days late (1,773 orders) and 1.73 for more than 7 days late (3,252 orders). The biggest single drop is between the first and second late groups. Late delivery and low review scores go together, but the data alone cannot show that lateness caused the low scores, since late orders may have other problems as well.
+
+![Q4 late vs on-time](q4a_result.png)
+![Q4 by days late](q4b_result.png)
+
 ### Still to do (planned)
-4. Do late deliveries get lower review scores?
 5. Which payment methods do customers use?
 6. How many customers order more than once (using `customer_unique_id`)?
 
