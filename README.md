@@ -95,8 +95,17 @@ See `07_q4_reviews.sql`.
 ![Q4 late vs on-time](q4a_result.png)
 ![Q4 by days late](q4b_result.png)
 
+### Q5: Which payment methods do customers use?
+See `08_q5_payments.sql`.
+
+**Method:** Delivered orders only. An order can be paid with more than one method, so the per-method order shares add up to more than 100%. Payment values include freight, so they do not match the item-only revenue in Q1 and Q2. Installments are counted per credit card payment.
+
+**Finding:** Credit card is the most used method, with 74,304 orders (77.0% of delivered orders) and 78.5% of total payment value. Next is boleto (a Brazilian bank-slip payment method) with 19,191 orders (19.9% of orders, 18.0% of value), then voucher with 3,679 orders (3.8%, 2.2% of value) and debit card with 1,485 orders (1.5%, 1.4% of value). The order shares add up to 102.2% because some orders were paid with more than one method (vouchers had 5,493 payments across 3,679 orders). About two thirds of credit card payments (66.8%) were split into more than one installment: 33.2% used one installment, 29.8% used 2 to 3, 21.2% used 4 to 6 and 15.8% used 7 or more. The average payment value rises with the number of installments, from about 96 for one installment to about 332 for 7 or more. The data alone cannot show why.
+
+![Q5 payment methods](q5a_result.png)
+![Q5 credit card installments](q5b_result.png)
+
 ### Still to do (planned)
-5. Which payment methods do customers use?
 6. How many customers order more than once (using `customer_unique_id`)?
 
 *Results and a dashboard will be added as each question is completed.*
