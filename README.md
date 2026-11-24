@@ -74,8 +74,18 @@ See `05_q2_category_revenue.sql`.
 
 ![Q2 result](q2_result.png)
 
+### Q3: How long does delivery take, and what share of orders arrive late?
+See `06_q3_delivery.sql`.
+
+**Method:** Delivered orders that have a delivery date (96,470 orders; the 8 delivered orders with no delivery date are excluded). Delivery time is the number of days from purchase to delivery to the customer. An order counts as late if it arrived after the estimated delivery date.
+
+**Finding:** Average delivery time was 12.6 days and the median was 10.2 days, so a minority of slow deliveries pull the average up. 7,826 orders (about 8.1%) arrived late. In 2017 the monthly late share was between about 3% and 8.4%, except in Nov 2017 (the busiest month), when it reached 14.3% and average delivery time rose to 15.2 days. It reached 16.0% in Feb 2018 and 21.4% in Mar 2018, the highest of any month with meaningful volume, then fell to 5.3% in Apr 2018 and 1.4% in Jun 2018. In Aug 2018 the average delivery time was the shortest (7.7 days), but 10.4% of orders were still late, so the late share does not move one-to-one with delivery time. The data alone cannot explain these changes. The 2016 months have too few orders to interpret. Monthly order counts can differ from Q1 by a few orders, because Q1 counts all delivered orders and this query counts only those with a delivery date.
+
+![Q3 overall](q3a_result.png)
+![Q3 by month, first rows](q3b_result_1.png)
+![Q3 by month, remaining rows](q3b_result_2.png)
+
 ### Still to do (planned)
-3. How long does delivery take, and what share of orders arrive late?
 4. Do late deliveries get lower review scores?
 5. Which payment methods do customers use?
 6. How many customers order more than once (using `customer_unique_id`)?
