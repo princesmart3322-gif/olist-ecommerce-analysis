@@ -74,11 +74,3 @@ See `04_q1_monthly_revenue.sql`.
 
 *Results and a dashboard will be added as each question is completed.*
 
-## Business Questions (planned)
-1. Which product categories earn the most revenue?
-2. How long does delivery take, and what share of orders arrive late?
-3. Do late deliveries get lower review scores?
-4. Which payment methods do customers use?
-5. How many customers order more than once (using `customer_unique_id`)?
-
-*Results and a dashboard will be added as each question is completed.*
