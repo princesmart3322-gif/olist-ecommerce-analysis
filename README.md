@@ -65,12 +65,19 @@ See `04_q1_monthly_revenue.sql`.
 ![Q1 result, first rows](q1_result_1.png)
 ![Q1 result, remaining rows](q1_result_2.png)
 
+### Q2: Which product categories earn the most revenue?
+See `05_q2_category_revenue.sql`.
+
+**Method:** Delivered orders only. Revenue is the sum of item prices excluding freight. Category names were translated to English, and products with no category are grouped as `unknown`. Each category's share is calculated against revenue from all categories.
+
+**Finding:** The top 10 categories earn about 62% of total revenue. health_beauty ranks first (1,233,132, 9.3% of total), followed by watches_gifts (1,166,177, 8.8%) and bed_bath_table (1,023,435, 7.7%). bed_bath_table sold the most items (10,953) but ranks third in revenue, while watches_gifts sold only 5,859 items and ranks second, so watches_gifts items cost more on average (roughly 199 per item against 93, calculated from these figures). Ranks 4 to 10 are sports_leisure, computers_accessories, furniture_decor, housewares, cool_stuff, auto and toys.
+
+![Q2 result](q2_result.png)
+
 ### Still to do (planned)
-2. Which product categories earn the most revenue?
 3. How long does delivery take, and what share of orders arrive late?
 4. Do late deliveries get lower review scores?
 5. Which payment methods do customers use?
 6. How many customers order more than once (using `customer_unique_id`)?
 
 *Results and a dashboard will be added as each question is completed.*
-
