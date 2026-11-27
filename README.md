@@ -115,6 +115,86 @@ See `09_q6_repeat_customers.sql`.
 ![Q6 customers by number of orders](q6a_result.png)
 ![Q6 repeat customer summary](q6b_result.png)
 
+## Dashboard
+
+A one-page Power BI dashboard built from custom SQL queries on `olist_db` (Import mode).
+
+![Olist E-commerce Dashboard](dashboard.png)
+
+```mermaid
+flowchart LR
+    A([Start]) --> B[(PostgreSQL: olist_db)]
+    B --> C[Custom SQL queries]
+    C --> D[Power BI import]
+    D --> E[KPI cards and charts]
+    E --> F([End])
+```
+
+| KPI | Value |
+|---|---|
+| Total revenue (item price, excluding freight) | 13.22M |
+| Delivered orders | 96,478 |
+| Average delivery time (days) | 12.6 |
+| Late orders | 8.1% |
+| Average review score | 4.16 |
+
+**Charts**
+
+- Monthly revenue, Jan 2017 to Aug 2018
+- Top 10 categories by revenue
+- Average review score by lateness group
+- Share of orders by payment method
+
+**Notes**
+
+- All figures cover delivered orders only.
+- The monthly chart starts in Jan 2017. The total revenue card has no date filter.
+- Delivery time and late share use only orders with a delivery date.
+- The review score uses the latest review per order.
+- Payment shares can total more than 100% because an order can use more than one payment method.
+
+Files: [`olist_dashboard.pbix`](olist_dashboard.pbix), [lateness query](10_dashboard_review_lateness.sql), [payment query](11_dashboard_payment_methods.sql), [KPI query](12_dashboard_kpis.sql)
+
+## Dashboard
+
+A one-page Power BI dashboard built from custom SQL queries on `olist_db` (Import mode).
+
+![Olist E-commerce Dashboard](dashboard.png)
+
+```mermaid
+flowchart LR
+    A([Start]) --> B[(PostgreSQL: olist_db)]
+    B --> C[Custom SQL queries]
+    C --> D[Power BI import]
+    D --> E[KPI cards and charts]
+    E --> F([End])
+```
+
+| KPI | Value |
+|---|---|
+| Total revenue (item price, excluding freight) | 13.22M |
+| Delivered orders | 96,478 |
+| Average delivery time (days) | 12.6 |
+| Late orders | 8.1% |
+| Average review score | 4.16 |
+
+**Charts**
+
+- Monthly revenue, Jan 2017 to Aug 2018
+- Top 10 categories by revenue
+- Average review score by lateness group
+- Share of orders by payment method
+
+**Notes**
+
+- All figures cover delivered orders only.
+- The monthly chart starts in Jan 2017. The total revenue card has no date filter.
+- Delivery time and late share use only orders with a delivery date.
+- The review score uses the latest review per order.
+- Payment shares can total more than 100% because an order can use more than one payment method.
+
+Files: [`olist_dashboard.pbix`](olist_dashboard.pbix), [lateness query](10_dashboard_review_lateness.sql), [payment query](11_dashboard_payment_methods.sql), [KPI query](12_dashboard_kpis.sql)
+
 ## Next Steps (planned)
-- Add recommendations based on the findings above
-- Build a dashboard of the key results
+
+- Add recommendations based on the six findings.
