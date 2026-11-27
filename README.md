@@ -195,6 +195,28 @@ flowchart LR
 
 Files: [`olist_dashboard.pbix`](olist_dashboard.pbix), [lateness query](10_dashboard_review_lateness.sql), [payment query](11_dashboard_payment_methods.sql), [KPI query](12_dashboard_kpis.sql)
 
+## Recommendations
+
+These are suggested actions based on the six findings. The findings are descriptive: they show patterns and associations, not proven causes.
+
+| Area | Finding | Suggested action | Limit |
+|---|---|---|---|
+| Revenue | Monthly revenue rose from 111,798 (Jan 2017) to a peak of 987,765 (Nov 2017), then ranged from about 826K to 978K in 2018. Revenue per order stayed about 124 to 149. | Track order count and revenue per order separately, with attention to order volume. | The analysis does not explain why order volume changed. |
+| Categories | The top 10 categories earn about 62% of revenue, led by health_beauty (9.3%), watches_gifts (8.8%) and bed_bath_table (7.7%). | Monitor product availability and seller coverage in these categories first. | Profit and stock levels were not analysed. |
+| Delivery | About 8.1% of orders were late. Monthly late share reached 14.3% (Nov 2017), 16.0% (Feb 2018) and 21.4% (Mar 2018). | Investigate what happened in these months and monitor late share monthly. | Causes of the delays were not analysed. |
+| Reviews | On-time orders averaged 4.29 stars and late orders 2.57. Orders over 7 days late averaged 1.73. | Prioritise reducing long delays, and test early updates to customers whose orders are at risk. | Lateness is associated with lower scores; this does not prove it caused them. Customer updates were not studied. |
+| Payments | Credit cards were used in 77.0% of orders and boleto in 19.9%. 66.8% of card payments used more than one installment. Average payment was about 96 for one installment and 332 for 7 or more. | Keep card, installment and boleto options working reliably. | Larger payments go with more installments; this does not show installments increase spending. |
+| Retention | 97.0% of customers ordered once. The 3.0% who repeated placed 6.1% of orders. | Test a follow-up campaign for first-time buyers and compare repeat rates with a control group. | The data does not show why customers did not return. |
+
+```mermaid
+flowchart LR
+    A([Start]) --> B[Review finding]
+    B --> C[Investigate or test action]
+    C --> D[Measure the result]
+    D --> E([End])
+```
+
 ## Next Steps (planned)
 
-- Add recommendations based on the six findings.
+- Compare late delivery share by customer state.
+- Compare repeat purchase rates by product category.
